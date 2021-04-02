@@ -1,0 +1,50 @@
+.card {
+  margin-bottom: 50px;
+  background-color: #f3f3f3;
+}
+
+.input-row {
+  display: flex;
+  align-items: flex-start;
+}
+
+.input-icon {
+  padding: 1rem 1rem 0 0.5rem;
+}
+
+.menu-button {
+  margin-top: 0.35rem;
+}
+
+.mat-card-content {
+  margin: 0 !important;
+}
+
+.mat-form-field {
+  width: 100%;
+}
+
+.picture {
+  display: inline-block;
+  height: 100px;
+}
+
+.file {
+  color: mediumblue;
+  font-weight: 500;
+}
+
+.mat-card > .mat-card-actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin: 0;
+}
+
+.button {
+  margin: 0;
+}
+
+.button:last-of-type {
+  margin-right: 0;
+}

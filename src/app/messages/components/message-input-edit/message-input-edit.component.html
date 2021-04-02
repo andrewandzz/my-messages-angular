@@ -1,0 +1,58 @@
+<ng-template [ngIf]="isVisible">
+
+  <form [formGroup]="form" autocomplete="off">
+    <mat-card class="card">
+      <mat-card-content>
+  
+        <div class="input-row">
+          <mat-icon class="input-icon">message</mat-icon>
+  
+          <mat-form-field>
+            <textarea
+              matInput
+              #autosize="cdkTextareaAutosize"
+              cdkTextareaAutosize
+              cdkAutosizeMinRows="1"
+              cdkAutosizeMaxRows="5"
+              placeholder="Message text"
+              formControlName="text">
+            </textarea>
+          </mat-form-field>
+          
+          <button mat-icon-button [matMenuTriggerFor]="menu" class="menu-button">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+  
+          <mat-menu #menu="matMenu" xPosition="before">
+            <button mat-menu-item (click)="pictureInput.click()">
+              <mat-icon>insert_photo</mat-icon>
+              <span>Add picture</span>
+            </button>
+            <button mat-menu-item (click)="fileInput.click()">
+              <mat-icon>attach_file</mat-icon>
+              <span>Add file</span>
+            </button>
+          </mat-menu>
+        </div>
+      
+        <input #pictureInput hidden type="file" accept="image/*" formControlName="picture"  (change)="handlePictureSelect($event.target)" />
+      
+        <input #fileInput hidden type="file" accept="*" formControlName="file"  (change)="handleFileSelect($event.target)" />
+
+        <app-message-attachments
+          [pictureName]="picture && picture.name"
+          [fileName]="file && file.name"
+          (onPictureDelete)="deletePicture(pictureInput)"
+          (onFileDelete)="deleteFile(fileInput)">
+        </app-message-attachments>
+  
+      </mat-card-content>
+  
+      <mat-card-actions>
+        <button class="button" mat-raised-button (click)="handleButtonCancelClick()" onclick="return false">Cancel</button>
+        <button class="button" mat-raised-button color="primary" (click)="handleButtonSaveClick()" onclick="return false">Save</button>
+      </mat-card-actions>
+    </mat-card>
+  </form>
+  
+</ng-template>

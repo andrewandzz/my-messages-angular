@@ -1,0 +1,34 @@
+.overlay {
+  display: table;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  width: 100%;
+  z-index: 101;
+}
+
+.middle {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.card {
+  display: block;
+  width: 400px;
+  margin: 0 auto;
+}
+
+.card-content {
+  margin-bottom: 1.5rem;
+}
+
+.card-actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-bottom: 0 !important;
+}

@@ -1,0 +1,85 @@
+:host {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.card {
+  position: relative;
+}
+
+.card > .card-actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.image {
+  object-fit: fill;
+  max-height: 240px;
+  display: none;
+  margin: 0 auto;
+  border-radius: 3px;
+}
+
+.image.visible {
+  display: block;
+}
+
+.image:hover {
+  cursor: pointer;
+}
+
+.sticker {
+  display: block;
+  margin: 0 auto;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+.text:not(:first-child) {
+  margin-top: 1rem;
+}
+
+.icon {
+  margin-right: 0.5rem;
+  text-decoration: none;
+}
+
+.file-line {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.file-line:not(:first-child) {
+  margin-top: 1rem;
+}
+
+.file {
+  display: inline-block;
+  color: #3f51b5;
+  font-weight: 600;
+}
+
+.file:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.icon-button {
+  position: absolute;
+  display: block;
+  top: 0;
+  right: 0;
+  margin-top: 0.3rem;
+  margin-right: 0.3rem;
+}
+
+.date {
+  color: #888888;
+  font-size: 0.8rem;
+  margin-top: 0.1rem;
+  padding-left: 0.5rem;
+}

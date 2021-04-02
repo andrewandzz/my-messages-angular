@@ -1,0 +1,19 @@
+main {
+  padding-top: 100px;
+}
+
+.card {
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.form-field {
+  display: block;
+  margin-bottom: 0.8rem;
+}
+
+.button-field {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}

@@ -1,0 +1,8 @@
+.separator {
+  position: relative !important;
+  visibility: hidden;
+}
+
+.separator:not(:first-child):not(:last-child) {
+  visibility: visible;
+}

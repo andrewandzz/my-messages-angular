@@ -1,0 +1,30 @@
+<app-header [registerButton]="true"></app-header>
+
+<main>
+  <form [formGroup]="form" autocomplete="off">
+    <mat-card class="card">
+      <mat-form-field class="form-field">
+        <mat-label>Name</mat-label>
+        <input matInput type="text" formControlName="name" maxlength="30" />
+        <mat-error *ngIf="form.controls.name.invalid">{{ getLoginErrorMessage() }}</mat-error>
+      </mat-form-field>
+  
+      <mat-form-field class="form-field">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" formControlName="password" />
+        <mat-error *ngIf="form.controls.password.invalid">{{ getPasswordErrorMessage() }}</mat-error>
+      </mat-form-field>
+  
+      <div class="button-field">
+        <button
+          mat-raised-button
+          color="primary"
+          onclick="return false"
+          (click)="handleButtonClick()"
+        >
+          Log in
+        </button>
+      </div>
+    </mat-card>
+  </form>  
+</main>

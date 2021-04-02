@@ -1,0 +1,10 @@
+.sticker {
+  max-height: 110px;
+  cursor: pointer;
+  position: relative;
+  transition: transform 60ms ease-in-out;
+}
+
+.sticker:active {
+  transform: scale(1.05);
+}

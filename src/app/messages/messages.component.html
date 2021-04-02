@@ -1,0 +1,41 @@
+<app-header [logOutButton]="true"></app-header>
+
+<main>
+  <div class="container">
+    <app-message-input
+      class="message-input"
+      (onSendButtonClick)="addMessage($event)"
+      (onChooseStickerClick)="handleChooseStickerClick()">
+    </app-message-input>
+
+    <app-stickers
+      (onStickerClick)="handleStickerClick($event)"
+      (onCloseButtonClick)="handleCloseStickersButtonClick()">
+    </app-stickers>
+    
+    <div>
+      <app-message-input-edit
+      class="message-input"
+      (onCancelButtonClick)="handleCancelButtonClick()"
+      (onSaveButtonClick)="handleSaveButtonClick($event)">
+      </app-message-input-edit>
+    </div>
+
+    <mat-spinner class="spinner" *ngIf="messages.length === 0 && messageLoader.isLoading"></mat-spinner>
+  
+    <div *ngIf="messages.length > 0">
+      <app-message
+      *ngFor="let message of messages"
+      [message]="message"
+      (onEditButtonClick)="handleEditButtonClick(message)"
+      (onDeleteButtonClick)="handleDeleteButtonClick(message)">
+      </app-message>
+      
+      <div class="end-text">Here is the beginning of your thoughts...</div>
+    </div>
+  
+    <div *ngIf="messages.length === 0 && !messageLoader.isLoading" class="end-text">You have no messages yet. Send one now :)</div>
+  </div>  
+</main>
+
+<app-confirm-box (onCancel)="closeConfirmBox()" (onConfirm)="proceedDeletingMessage()"></app-confirm-box>

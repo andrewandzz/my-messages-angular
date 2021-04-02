@@ -1,0 +1,29 @@
+.card {
+  margin-bottom: 50px;
+}
+
+.sticker {
+  max-height: 120px;
+  cursor: pointer;
+  position: relative;
+  transition: transform 60ms ease-in-out;
+}
+
+.sticker:active {
+  transform: scale(1.05);
+}
+
+.card-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin: 0 !important;
+}
+
+.button-close {
+  margin: -0.5rem !important;
+}
+
+.spinner {
+  margin: 0 auto;
+}

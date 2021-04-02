@@ -1,0 +1,10 @@
+<div class="body">
+  <div class="container">
+    <a routerLink="/"><div class="logo"><span class="blue">my</span>Messages</div></a>
+    <nav>
+      <button *ngIf="logOutButton" mat-raised-button (click)="handleLogOutClick()">Log out</button>
+      <button *ngIf="registerButton" mat-raised-button color="primary" routerLink="/register">Register</button>
+      <button *ngIf="logInButton" mat-raised-button color="primary" routerLink="/login">Log in</button>
+    </nav>
+  </div>
+</div>

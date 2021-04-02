@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+
+body.mat-typography {
+  margin: 0;
+  background-color: #fdfdfd;
+  font-family: "Open Sans", sans-serif;
+  background-image: url("assets/images/background-tile.png");
+  background-position: top;
+}

@@ -1,0 +1,21 @@
+<mat-list>
+
+  <mat-list-item *ngIf="pictureName">
+    <mat-icon mat-list-icon>insert_photo</mat-icon>
+    <div mat-line>{{ pictureName }}</div>
+    <button mat-icon-button (click)="onPictureDelete.emit()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-list-item>
+
+  <mat-divider class="separator"></mat-divider>
+  
+  <mat-list-item *ngIf="fileName">
+    <mat-icon mat-list-icon>attach_file</mat-icon>
+    <div mat-line>{{ fileName }}</div>
+    <button mat-icon-button (click)="onFileDelete.emit()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-list-item>
+
+</mat-list>

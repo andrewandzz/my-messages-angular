@@ -1,0 +1,48 @@
+<mat-card class="card">
+  <mat-card-content>
+    <ng-template [ngIf]="message.sticker">
+      <img #sticker *ngIf="message.sticker" [class.visible]="isStickerDataLoaded" class="sticker" title="{{ message.sticker.name }}" />
+
+      <button mat-icon-button [matMenuTriggerFor]="menu" *ngIf="isEditable" class="icon-button">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+  
+      <mat-menu #menu="matMenu" xPosition="before">
+        <button mat-menu-item (click)="handleDeleteButtonClick()">
+          <mat-icon>delete</mat-icon>
+          <span>Delete</span>
+        </button>
+      </mat-menu>
+    </ng-template>
+
+    <ng-template [ngIf]="!message.sticker">
+      <img #image *ngIf="message.picture" [class.visible]="isImageDataLoaded" class="image" (click)="handlePictureClick()" title="Download picture" />
+
+      <p *ngIf="message.text" class="text">
+        {{ message.text }}
+      </p>
+  
+      <p *ngIf="message.file" class="file-line">
+        <mat-icon class="icon">attach_file</mat-icon>
+        <span class="file" (click)="handleFileClick()" title="Download file">{{ message.file.name }}</span>
+      </p>
+  
+      <button mat-icon-button [matMenuTriggerFor]="menu" *ngIf="isEditable" class="icon-button">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+  
+      <mat-menu #menu="matMenu" xPosition="before">
+        <button mat-menu-item (click)="handleEditButtonClick()">
+          <mat-icon>mode_edit</mat-icon>
+          <span>Edit</span>
+        </button>
+        <button mat-menu-item (click)="handleDeleteButtonClick()">
+          <mat-icon>delete</mat-icon>
+          <span>Delete</span>
+        </button>
+      </mat-menu>
+    </ng-template>
+    
+  </mat-card-content>
+</mat-card>
+<div class="date">{{ message.date | date:'medium' }}</div>

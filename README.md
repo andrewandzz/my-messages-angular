@@ -1,0 +1,1 @@
+This is a front-end app for MyMessages project.
